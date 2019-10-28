@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.mail.MessagingException;
+import java.io.IOException;
 
 
 @RestController
@@ -34,6 +36,10 @@ public class EmailSenderController {
           e.printStackTrace();
           emailResponseDTO.setStatus(AppConstants.FAILED);
           return ResponseEntity.status(HttpStatus.ACCEPTED).body(emailResponseDTO);
+        } catch (MessagingException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         emailResponseDTO.setStatus(AppConstants.SUCCESS);
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(emailResponseDTO);

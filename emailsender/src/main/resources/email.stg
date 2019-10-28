@@ -1,0 +1,24 @@
+group template;
+Emailtemplate(name,empId,password) ::= <<
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:remove="all">Template for HTML email with inline image</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+hello  $name$!
+<br>
+<p>
+    You have been successfully registered to the <b>Employee Management</b>
+</p>
+<br>
+<br>
+<span>Your Id is :<b>$empId$</b></span>
+<br>
+<br>
+<span>Your Password is :$password$</span>
+<p>Regards,<br>The Employee Management Team</p>
+</body>
+</html>
+>>
