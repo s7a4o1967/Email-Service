@@ -1,0 +1,21 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:remove="all">Template for HTML email with inline image</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<span>hello  </span><span th:text="${name}"></span><span>!</span>
+<br>
+
+<p>
+    You have been successfully registered to the <b>Employee Management</b>
+</p>
+<br>
+<br>
+<span>Your Id is :</span><span th:text=" ${empid}"></span>
+<br>
+<br>
+<span>Your Password is :</span> <span th:text="${password}"></span>
+<p>Regards,<br><em>The Employee Management Team</em></p>
+</body>
+</html>
